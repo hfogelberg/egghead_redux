@@ -3,12 +3,15 @@ var expect = require('expect'),
         spyOn = expect.spyOn,
         isSpy = expect.isSpy;
 
-function counter(state, action) {
-  if (action.type === 'INCREMENT') {
-    return state + 1;
-  } else if (action.type === 'DECREMENT') {
-    return state - 1;
-  }
+const counter = (state=0, action) =>{
+    switch(action.type) {
+      case 'INCREMENT':
+        return state + 1;
+      case 'DECREMENT':
+        return state -1;
+      default:
+        return state;
+    }
 }
 
 expect(
@@ -30,5 +33,9 @@ expect(
 expect(
   counter(1, {type:'SOMETHING_ELSE'})
 ).toEqual(1);
+
+expect(
+  counter(undefined, {})
+).toEqual(0);
 
 console.log('Tests passed');
