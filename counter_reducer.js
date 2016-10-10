@@ -27,4 +27,8 @@ expect(
   counter(1, {type: 'DECREMENT'})
 ).toEqual(0);
 
+expect(
+  counter(1, {type:'SOMETHING_ELSE'})
+).toEqual(1);
+
 console.log('Tests passed');
