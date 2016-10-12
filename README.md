@@ -53,3 +53,35 @@ Instead of mutating, create a new array or object with the changes.
 
 [Avoid array mutations](./4_avoid_array_mutation.js)
 [Avoid object mutation](./5_avoid_object_mutation.js)
+
+### Todo list reducer
+[__1. Add a todo to the list__](./6_todo_list_reducer.js)
+````
+const todos = (state=[], action) =>{
+  switch(action.type){
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+            id: action.id,
+            text: action.text,
+            completed: false
+        }
+      ];
+      default:
+        return state;
+  }
+};
+````
+[__2. Toggle todo in the list__](7_toggle_todo.js)
+````
+return state.map(todo => {
+  if (todo.id !== action.id) {
+    return todo;
+  } else {
+    return Object.assign({}, todo, {
+      completed: !todo.completed
+    });
+  }
+});
+````
