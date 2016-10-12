@@ -50,3 +50,6 @@ The store binds together the three principles of Redux:
 ### Avoid mutations in Redux
 The Redux store must  not be mutated. It is immutable.
 Instead of mutating, create a new array or object with the changes.
+
+[Avoid array mutations](./4_avoid_array_mutation.js)
+[Avoid object mutation](./5_avoid_object_mutation.js)
