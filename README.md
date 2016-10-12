@@ -24,14 +24,14 @@ function square(x) {
 }
 ````
 
-__ The UIS layer is most predictable when it's described by pure functions.
+The UI layer is most predictable when it's described by pure functions.
 
 ### The Reducer Function
 Inside Redux applications there is a particualr function called the reducer that takes the previous state and the action. It returns the next state of __the whole__  application. It is important that the function is pure.
 
 ## Reducer  and store
 ### Counter reducer with tests
-(Example code 1)[./1_counter_reducer.js] demonstrates action and reducers.
+[Example code 1](./1_counter_reducer.js) demonstrates action and reducers.
 
 ### Redux store
 The store binds together the three principles of Redux:
@@ -85,3 +85,8 @@ return state.map(todo => {
   }
 });
 ````
+
+### Reducer composition
+Reducers can become complicated if they do too many things and should in that case be broken up in to seperate functions that address only one concern.
+
+Redux composition means that Different reducers specify how different parts of the state tree are updated in response to actions. Reducers can call other reducers. A single top-level reducer manages the over all state and call unerlying reducers to handle underlying parts of the application.
