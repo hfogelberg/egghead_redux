@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js'></script>
+  </head>
+  <body>
+      <div id='root'></div>
+
+      <script type='text/babel'>
+      const counter = (state=0, action) =>{
+        switch(action.type) {
+          case 'INCREMENT':
+            return state + 1;
+          case 'DECREMENT':
+            return state -1;
+            default:
+              return state;
+        }
+      }
+
+      const {createStore} = Redux;
+      const store = createStore(counter);
+
+      const ShowCounter = ({
+        value,
+        onIncrement,
+        onDecrement
+      })=>(
+        <div>
+          <h1>Value: {value}</h1>
+          <button onClick={onIncrement}>Increment</button>
+          <button onClick={onDecrement}>Decrement</button>
+        </div>
+      )
+
+        const render = () =>{
+          ReactDOM.render(
+            <ShowCounter value={store.getState()}
+            onIncrement={()=>store.dispatch({type: 'INCREMENT'})}
+            onDecrement={()=>store.dispatch({type:'DECREMENT'})} />,
+            document.getElementById('root'));
+        };
+
+        store.subscribe(render);
+        render();
+      </script>
+
+      <script src="https://fb.me/react-15.0.1.js"></script>
+      <script src="https://fb.me/react-dom-15.0.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </body>
+</html>

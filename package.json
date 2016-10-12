@@ -1,12 +1,12 @@
 {
   "name": "egghead_redux",
   "version": "1.0.0",
-  "description": "Following Dan Abramov\s tutorial on Redux",
+  "description": "Following Dan Abramov\\s tutorial on Redux",
   "main": "index.js",
   "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "babel": {"presets": ["es2015"]},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,9 +16,13 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-runtime": "^6.11.6",
     "expect": "^1.20.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "redux": "^3.6.0",
     "redux-form": "^6.1.0",
     "redux-promise": "^0.5.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   }
 }

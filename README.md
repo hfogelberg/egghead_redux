@@ -31,6 +31,18 @@ Inside Redux applications there is a particualr function called the reducer that
 
 ## Reducer  and store
 ### Counter reducer with tests
-(Example code 1)[./counter_reducer.js] demonstrates action and reducers.
+(Example code 1)[./1_counter_reducer.js] demonstrates action and reducers.
 
 ### Redux store
+The store binds together the three principles of Redux:
+1. It holds the current application state object.
+2. It allows you to dispatch applications.
+3. You need to specify the reducer that tells how the state is updated.
+
+  __Store has three important methods:__
+  1. getState() retrieves the current state.
+  2. dispathch() dispatches an action to change the state.
+  3. subscribe() registers a callback that the  redux store will call any time the state of the application is changed:
+
+[Store example without Redux](./2_create_store.js)
+[Store example using Redux] (./3_create_store.html)
