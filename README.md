@@ -46,3 +46,7 @@ The store binds together the three principles of Redux:
 
 [Store example without Redux](./2_create_store.js)
 [Store example using Redux] (./3_create_store.html)
+
+### Avoid mutations in Redux
+The Redux store must  not be mutated. It is immutable.
+Instead of mutating, create a new array or object with the changes.
